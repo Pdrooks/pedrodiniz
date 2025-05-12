@@ -1,3 +1,3 @@
 
-mensagem = "commit"
+mensagem = "Utilizando o git" 
 print(mensagem)

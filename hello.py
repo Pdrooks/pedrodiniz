@@ -1,1 +1,3 @@
-print('hello git.vscode')
+
+mensagem = "commit"
+print(mensagem)

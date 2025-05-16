@@ -1,0 +1,287 @@
+1.
+#include <stdio.h>
+
+int main(){
+
+	int num, resto;
+
+	printf("Digite um numero e descubra se e par: ");
+	scanf("%i", &num);
+
+	resto = num % 2;
+
+	if(resto == 0)
+	{
+	printf("o numero %i e par", num);
+	}
+	else{
+	printf("o numero %i e impar", num);
+	}
+
+	
+}
+
+2.
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+	
+	int a,b,c,d,e,numero;
+
+	printf("Digite um numero: ");
+	scanf("%i", &numero);
+	
+	a = (numero / 10000) * 10000;
+	b = ((numero % 10000) / 1000)*1000;
+	c = (((numero % 10000) % 1000) / 100)*100;
+	d = ((((numero % 10000) % 1000) % 100 )/ 10)*10;
+	e = ((((numero % 10000) % 1000) % 100 )% 10)*1;
+
+	printf("%i + %i + %i + %i + %i", a,b,c,d,e);  
+	
+
+}
+
+3.
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+
+	int a,seg,min,hora,dia;
+
+	printf("insira uma quantidade de segundos: ");
+	scanf("%i", &a);
+
+	seg = a;
+	min = a/60;
+	hora = a/3600;
+	dia = a/3600*24;
+	
+	if (a >= 0 && a < 60)
+	{
+		printf("o numero equivale a %i segundos.", seg);
+	}
+	else if (a >= 60 && a < 3600)
+	{
+		printf("os %i segundos equivalem a %i minutos", a, min);
+	}
+	else if (a >= 3600 && a <86400)
+	{
+		printf("os %i segundos equivalem a %i horas",a, hora);
+	}
+	else if (a >= 86400)
+	{
+		printf("os %i segundos equivalem a: %i dias",a, dia);
+	}
+
+
+
+
+}
+
+4.
+#include <stdio.h>
+int main(){
+	
+	int idade;
+
+	printf("Digite a sua idade: ");
+	scanf("%i", &idade);
+	
+	if (idade<12)
+	{
+		printf("sua idade se encaixa em crianca");
+	}
+	else if(idade>=12 && idade<17)
+	{
+		printf("sua idade se encaixa em adolescente");
+	}
+
+	else if(idade>=18 && idade<59)
+	{
+		printf("sua idade se encaixa em adulto");
+	}
+
+	else if(idade>=60)
+	{
+		printf("sua idade se encaixa em idoso");
+	}
+
+
+
+}
+
+5.
+#include <stdio.h>
+int main(){
+	
+	float n1,n2,n3, media;
+
+	printf("Digite a sua nota do trabalho de laboratorio");
+	scanf("%f", &n1);
+	
+	printf("Digite a sua nota da avaliacao semestral");
+	scanf("%f", &n2);
+	
+	printf("Digite a sua nota do exame final");
+	scanf("%f", &n3);
+	
+	media = ((n1*2)+(n2*3)+(n3*5))/10;
+
+
+	
+	if (media >= 8 && media <= 10)
+	{
+		printf("voce se encaixa no conceito A");
+	}
+
+	else if (media<7.99 && media>=7)
+	{
+		printf("voce se encaixa no conceito B");
+	}
+
+
+	else if (media<6.99 && media>=6)
+	{
+		printf("voce se encaixa no conceito C");
+	}
+
+
+	else if (media<5.99 && media>=5)
+	{
+		printf("voce se encaixa no conceito D");
+	}
+
+
+	else if (media<4.99 && media>=0)
+	{
+		printf("voce se encaixa no conceito E");
+	}
+
+	
+
+}
+
+6.
+#include <stdio.h>
+
+int main(){
+
+	int a,b,c;
+	
+	printf("Digite tres numeros inteiros: ");
+	scanf("%i %i %i", &a,  &b,  &c);
+
+	if (c < b && b < a)
+	printf("%i %i %i", a, b, c);
+	
+	else if (a < b && b < c)
+	printf("%i %i %i", c, b, a);
+
+	else if (b < a && a < c)
+	printf("%i %i %i", c, a, b);
+	
+	else if (b > a && a > c)
+	printf("%i %i %i", b, a, c);
+
+	else if (a < c && c < b)
+	printf("%i %i %i", b, c, a);
+
+	else if (b < c && c < a)
+	printf("%i %i %i", a, c, b);
+	
+
+
+
+}
+
+7.
+#include <stdio.h>
+
+int main(){
+
+	int a,b,c,d;
+	
+	printf("Digite tres numeros inteiros em ordem: \n");
+	scanf("%i %i %i", &a,  &b,  &c);
+
+	printf("Digite mais um numero: ");
+	scanf("%i", &d);
+
+	if (d > c)
+	printf("%i %i %i %i", d, c, b, a);
+	
+	else if (d < c && d > b)
+	printf("%i %i %i %i", c, d, b, a);
+
+	else if (d < b && d > a)
+	printf("%i %i %i %i", c, b, d, a);
+	
+	else if (d < a )
+	printf("%i %i %i %i", c, b, a, d);
+
+		
+
+
+
+}
+
+8.------------------------------------------------------------------
+
+9.
+#include <stdio.h>
+
+int main(){
+
+	int x, y, z;
+	
+	printf("Digite os valores de x, y e z respectivamente: ");
+	scanf("%i %i %i", &x, &y, &z);
+
+	if ((x < y + z) && (y < x + z) && (z < x + y))
+    	printf("pode ser triangulo.\n");
+
+	if (x == y && y ==z)
+	printf("Triangulo equilatero");
+
+	else if (x == y || x == z || y == z)
+	printf("Triangulo isosceles");
+
+
+	else if (x != y && y != z)
+	printf("Triangulo escaleno");
+
+	
+	   
+	
+		
+
+
+
+}
+
+10.
+#include <stdio.h>
+
+int main(){
+
+	int ano;
+	
+	printf("Digite um ano: ");
+	scanf("%i", &ano);
+
+	if (ano % 4 == 0 && ano % 400 == 0)
+	printf("O ano e bissexto");
+
+	else if(ano % 100 != 0)
+	printf("O ano nao e bissexto");
+		
+
+
+
+}
+
+	

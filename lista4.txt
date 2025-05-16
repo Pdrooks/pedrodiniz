@@ -1,0 +1,275 @@
+1.
+#include <stdio.h>
+
+int main(){
+
+	
+	int n,valor,soma=0;
+
+	printf("Digite a quantidade de numeros que voce deseja: ");
+	scanf("%i",&n);
+	
+	for(int i=1;i<=n; i++ ){
+		printf("Digite o valor %i: ",i);
+		scanf("%d",&valor);
+
+	soma +=valor;
+	
+
+	}
+	
+	printf("A soma e: %i",soma);
+	
+
+
+
+
+
+
+
+
+}
+2.
+#include <stdio.h>
+
+int main(){
+
+	int n,i;
+	printf("Digite um numero: ");
+	scanf("%i",&n);
+
+	for(i=n;i>=1;i--){
+	printf("%i\n",i);
+	
+
+	}
+	
+}
+3.
+#include <stdio.h>
+
+int main(){
+
+	int i,n,contador=0;
+
+	printf("Digite um numero: ");
+	scanf("%i",&n);
+
+	for(i=1;n>=i;i+=2){
+	contador+=1;
+	printf("%i\n",i);
+
+	
+	}
+	printf("Tem %i numeros impares",contador);
+
+
+
+
+
+
+
+
+
+
+
+}
+4.
+#include<stdio.h>
+
+int main(){
+
+	int n,i,contador=0;
+
+	printf("Digite um numero: ");
+	scanf("%i",&n);
+	
+	for(i=0;i<=n;i+=2){
+	printf("%i\n",i);
+	contador+=1;
+
+	}
+	printf("existem %i numeros pares em %i",contador,i);
+
+
+
+
+
+
+
+
+
+
+}
+5.
+#include <stdio.h>
+
+int main(){
+	
+	int inteiro,contador=0;
+
+	printf("digite um numero inteiro: ");
+	scanf("%i",&inteiro);
+
+	int i=inteiro;
+	for(;i>0;){
+	i/=10;
+	contador++;
+	}
+	printf("o numero %i possui %i digitos",inteiro,contador);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+6.
+#include <stdio.h>
+
+int main(){
+
+	int n,i,peso,resultado,num,soma;
+	float nota;
+
+	printf("digite a quantidade de notas a ser contabilizadas: ");
+	scanf("%i",&n);
+
+	for(i=1;i<=n;i++){
+	printf("\nDigite a nota e o peso ");
+	scanf("%f %f",&nota,&peso);
+	resultado = (nota*peso)/(peso+peso);
+	
+	
+	
+	}
+	printf("%i",resultado);
+
+
+
+
+
+
+
+
+
+}
+7.
+#include <stdio.h>
+
+int main(){
+
+
+	long long i,fatorial=1,n;
+	
+	
+	printf("Digite um numero: ");
+	scanf("%lli",&n);
+
+	for(i=n;i>=1;i--){
+	fatorial *=i;
+	
+	printf("%lli\n",fatorial);
+	}
+	
+	
+	printf("o fatorial de %lli e: %lli",n,fatorial);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+8.
+#include<stdio.h>
+
+int main(){
+	
+	int num;
+	
+	printf("Digite um numero: ");
+	scanf("%i",&num);
+
+	for(int i=num;i>0;i/=10){
+	printf("%i",i%10);}
+
+
+
+}
+9.
+#include <stdio.h>
+
+int main(){
+
+
+	int qtd,valor,min=2147483648;
+
+	printf("Quantos numeros serao lidos?:");
+	scanf("%d", &qtd);
+
+	for(int i=1;i<=qtd;i++){
+	
+		printf("Digite um numero: ");
+		scanf("%i",&valor);
+		
+		if(valor<=min){
+			min = valor;
+		}
+	
+	}
+
+
+	printf("O menor valor digitado e %i", min);
+
+
+
+
+
+
+
+
+}
+10.
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+
+	float p=1000,r=0.05,n,a;
+
+	for(n=1;n<=10;n++){
+	a = p*pow(1+r,n);
+	printf("%.2f\n",a);
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+}

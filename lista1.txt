@@ -1,0 +1,142 @@
+/*Com base na aula anterior, faça os algoritmos solicitados abaixo no caderno.
+Utilizando a sintaxe da Linguagem C.
+*/
+
+
+/*
+1. Faça um programa que calcule a soma, subtração, divisão e multiplicação
+de dois números fornecidos pelo usuário.
+*/
+
+#include <stdio.h>
+
+int main(){
+	
+	float n1,n2,soma,sub,mult,div;
+	
+	printf("Digite um numero: ")
+	scanf("%f", &n1); 
+
+	printf("Digite outro numero: ")
+	scanf("%f", &n2);
+
+	soma = n1 + n2;
+	sub = n1 - n2;
+	mult = n1 * n2;
+	div = n1 / n2;
+	
+	printf("A soma e: %f\n", soma);
+	printf("A subtração e: %f\n", soma);
+	printf("A multiplicacao e: %f\n", );
+	printf("A divisao e: %f\n", div);
+}
+
+/*
+2. Faça um programa que encontre a raiz de uma equação de 2º grau
+utilizando a fórmula de Báskara. Os coeficientes são fornecidos pelo
+usuário
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+	float a,b,c,delta,x1,x2;
+
+	printf("ola, eu sou uma calculadora de funcoes quadraticas\nDigite os valores de A, B e C respectivamente:\n");
+	scanf("%f %f %f", a, b, c);
+	
+	delta = pow(b, 2) - 4 * a * c;
+
+	printf("o seu delta e %f", delta);
+	
+	
+
+}
+
+/*
+3. Faça um programa que calcule a média ponderada dadas as notas e os
+pesos.
+*/
+
+
+	float pt, hist, ing, mat, resultado;
+
+	
+	
+	printf("Ola, sou uma calculadora de media ponderada.\n1. Insira a nota de portugues com peso 2:\n");
+	scanf("%f", &pt);
+	
+	printf("Insira a nota de historia com peso 1:\n");
+	scanf("%f", &hist);
+	
+	printf("Insira a nota de ingles com peso 2:\n");
+	scanf("%f", &ing);
+	
+	printf("Insira a nota de matematica com peso 3:\n");
+	scanf("%f", &mat);
+	
+	resultado = ((pt * 2) + (hist * 1) + (ing * 2) + (mat * 3))/8;
+
+	printf("o resultado das notas foi: %.2f", resultado);
+
+	return 0;
+
+	
+
+
+}
+
+/*
+4. Faça um programa que calcule a distância entre dois pontos no plano
+cartesiano. As coordenadas são fornecidas pelo o usuário.
+*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+
+	float x1,y1,x2,y2,x,y,d;
+	
+
+	
+	printf("insira as primeiras coordenadas x e y:");
+	scanf("%f %f", &x1, &y1);
+	
+	printf("Agora insira as outras duas coordenadas x e y:");
+	scanf("%f %f", &x2, &y2);
+
+	x = x2 - x1;
+	y = y2 - y1;
+	d = sqrt(pow(x, 2) + pow(y, 2));
+
+	printf("A distancia entre as duas coordenadas e: %f", d);
+	
+
+}
+
+/*
+5. Faça um programa que calcule o aumento de 25% de um salário fornecido,
+e mostre o novo salário para o usuário.
+*/
+
+#include <stdio.h>
+
+int main(){
+
+	float salario, aumento;
+
+	printf("Ola, eu sou seu assistente financeiro\nDigite o seu salario, e apos isso vera seu aumento!\n");
+	scanf("%f", &salario);
+
+	aumento = salario *1.25;
+
+	printf("O seu salario e de %.2f, e voce recebeu um aumento de 25%%.\nSeu novo salario sera: %.2f", salario, aumento);
+
+	return 0;
+
+
+}

@@ -1,0 +1,479 @@
+lista3
+
+1.
+#include <stdio.h>
+
+int main(){
+
+	int i;
+	float n1,n2,n3,aux;
+
+	printf("Digite tres valores: ");
+	scanf("%f %f %f", &n1,&n2,&n3);
+
+	printf("Escolha um numero de 1 a 3: ");
+	scanf("%i",&i);
+
+	if(i == 1){
+		if(n1 > n2){
+		aux = n2;
+		n2 = n1;
+		n1 = aux;
+		}	
+
+		if(n1>n3)
+		{
+		aux = n1;	
+		n1= n3;
+		n3 = aux;
+		}
+
+		if(n2>n3)
+		{
+		aux = n2;
+		n2 = n3;
+		n3 = aux;
+		}
+		
+	}
+	if(i == 2){
+		if(n1 < n2){
+		aux = n2;
+		n2 = n1;
+		n1 = aux;
+		}	
+
+		if(n1<n3)
+		{
+		aux = n1;	
+		n1= n3;
+		n3 = aux;
+		}
+
+		if(n2<n3)
+		{
+		aux = n2;
+		n2 = n3;
+		n3 = aux;
+		}
+		
+	}
+	if(i == 3){
+		if(n1 > n2 && n2 > n3 )
+		{
+		aux = n2;
+		n2 = n1;
+		}	
+
+		if(n3 > n2 && n2 > n1 )
+		{
+		aux = n2;	
+		n2= n3;
+		}
+		else(n2 > n3 && n2 > n1);
+		
+	}
+
+
+	
+	switch(i){
+		case 1:
+		printf("%.f %.f %.f",n1,n2,n3);
+		break;
+		case 2:
+		printf("%.f %.f %.f",n1,n2,n3);
+		break;
+		case 3:
+		printf("%.f %.f %.f",n1,n2,n3);
+		break;
+		default:
+		printf("Tente Novamente!");
+
+	}
+
+
+
+}
+
+2.
+#include <stdio.h>
+
+int main(){
+
+	int dia,mes,ano,calculo1,calculo2,resto;
+
+	printf("Digite sua data de nascimento dessa maneira:\n(XX/XX/XXXX)\n");
+	scanf("%i/%i/%i", &dia, &mes, &ano);	
+	
+	//((calculo1 / 1000 * 10) + (calculo1 % 1000 / 100))
+	
+	calculo1 = (((dia * 100) + mes) + ano);
+	calculo2 = ((calculo1 / 100) + (calculo1 % 100));
+	resto = calculo2 % 5;
+
+	printf("%i: ",resto);	
+
+	switch(resto){
+	case 0: printf("Timido"); break;
+	case 1: printf("Sonhador"); break;
+	case 2: printf("Paquerador"); break;
+	case 3: printf("Atraente"); break;
+	case 4: printf("Irresistivel"); break;
+	}
+
+
+
+
+}
+3.
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+	int percentual,salario;
+	char codigo,cargo[12];
+	float total;
+	
+	printf("Digite seu codigo: ");
+	scanf("%c",&codigo);
+
+	switch(codigo){
+		case '1':{
+		strcpy(cargo, "Escrituario");
+		percentual = 50;
+		salario = 1000;
+		float total = salario + (salario * (percentual/100.00));
+		printf("O salario inicial do cargo %s e: %.2i reais, e possui o aumento de %i porcento.\nSalario final: %.2f reais.",cargo,salario,percentual,total);
+		break;
+		}
+		case '2':{
+		strcpy(cargo, "Secretario");
+		percentual = 20;
+		salario = 2000;
+		float total = salario + (salario * (percentual/100.00));
+		printf("O salario inicial do cargo %s e: %.2i reais, e possui o aumento de %i porcento.\nSalario final: %.2f reais.",cargo,salario,percentual,total);
+		break;
+		}
+		case '3':{
+		strcpy(cargo, "Caixa");
+		percentual = 20;
+		salario = 3000;
+		float total = salario + (salario * (percentual/100.00));
+		printf("O salario inicial do cargo %s e: %.2i reais, e possui o aumento de %i porcento.\nSalario final: %.2f reais.",cargo,salario,percentual,total);
+		break;
+		}
+		case '4':{
+		strcpy(cargo, "Gerente");
+		percentual = 0.10;
+		salario = 4000;
+		float total = salario + (salario * (percentual/100.00));
+		printf("O salario inicial do cargo %s e: %.2i reais, e possui o aumento de %i porcento.\nSalario final: %.2f reais.",cargo,salario,percentual,total);
+		break;
+		}
+		case '5':{
+		strcpy(cargo, "Diretor");
+		percentual = 0;
+		salario = 5000;
+		float total = salario + (salario * (percentual/100.00));
+		printf("O salario inicial do cargo %s e: %.2i reais, e possui o aumento de %i porcento.\nSalario final: %.2f reais.",cargo,salario,percentual,total);
+		break;
+		}
+		default:
+            	printf("Codigo invalido!\n");
+            	return 1;
+
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+}
+4.
+5.
+#include <stdio.h>
+
+int main(){
+
+
+	float a,p;
+
+	printf("Digite sua altura em Metros e o peso em Kg, respectivamente: ");
+	scanf("%f %f",&a,&p);
+
+	if (a < 1.20){
+		if (a <= 60) printf("A");
+		else if (a > 60 && a < 90) printf("D");
+		else printf("G"); 
+	}
+	if (a >= 1.20 && a <= 1.70){
+		if (p <= 60) printf("B");
+		else if (p > 60 && p < 90) printf("E");
+		else printf("H"); 
+	}
+	if (a > 1.70){
+		if (p <= 60) printf("C");
+		else if (p > 60 && p < 90) printf("F");
+		else printf("I"); 
+	}
+
+
+
+
+
+}
+6.
+#include <stdio.h>
+
+int main(){
+
+
+	int pais,produto, codigo, peso,total;
+	
+	printf("Digite o codigo do produto de 1 a 10: ");
+	scanf("%i", &codigo);
+
+	printf("Digite o codigo do pais de origem de 1 a 3: ");
+	scanf("%i", &pais);
+
+	printf("Digite o peso do produto em Kg: ");
+	scanf("%i", &peso);
+
+	switch(codigo){
+	case 1: case 2: case 3: case 4: produto = (peso * 1000 * 10); break;
+	case 5: case 6: case 7: produto = (peso * 1000 * 25); break;
+	case 8: case 9: case 10: produto = (peso * 1000 * 35); break;
+	default: printf("ERRO"); break;
+	}
+
+	switch(pais){
+	case 1:{ printf("O peso do produto em gramas e: %i\nO preco total foi de %i reais\nO imposto foi de 0 porcento\nTotal: %i",peso*1000,produto,produto);
+	break;}
+	case 2:{ total = -produto*0.15+produto;
+	printf("O peso do produto em gramas e: %i\nO preco total foi de %i reais\nO imposto foi de 15 porcento\nTotal: %i",peso*1000,produto,total);
+	break;}
+	case 3:{ total = -produto*0.25+produto;
+	printf("O peso do produto em gramas e: %i\nO preco total foi de %i reais\nO imposto foi de 25 porcento\nTotal: %i",peso*1000,produto,total);
+	break;}
+	
+
+	}
+
+
+
+
+
+
+
+
+
+}
+7.
+#include <stdio.h>
+
+int main(){
+	
+	float carga,peso,pquilo,imposto;
+	int estado,codigo;
+
+	printf("Digite o codigo do estado (1-5): ");
+	scanf("%i",&estado);
+
+	printf("\nDigite o peso da carga em Toneladas: ");
+	scanf("%f",&peso);
+
+	printf("\nDigite o codigo da carga: ");
+	scanf("%f",&carga);
+
+	if (carga >= 10 && carga <= 20) pquilo = peso * 1000 * 100;
+	else if (carga >= 21 && carga <= 30) pquilo = peso * 1000 * 250;
+	else if (carga >= 31 && carga <= 40) pquilo = peso * 1000 * 340;
+	
+
+	switch(estado){
+	case 1: {imposto = 0.35; break;}
+	case 2: {imposto = 0.25; break;}
+	case 3: {imposto = 0.15; break;}
+	case 4: {imposto = 0.05; break;}
+	case 5: {imposto = 0; break;}
+	}
+
+	printf("O peso do caminhao em quilos e: %.2f Kg\n",peso*1000);
+	printf("O preco da carga e: %.2f reais\n",pquilo);
+	printf("O valor do imposto e: %.2f reais\n",imposto*pquilo);
+	printf("O valor total com imposto foi de: %.2f reais",pquilo-(imposto*pquilo));
+
+
+
+
+}
+8.
+#include <stdio.h>
+
+int main(){
+
+	int conversao,unidade,destino,temperatura,distancia,tempo,valor,total,a1,a2,b1,b2,c1,c2;
+
+	printf("Escolha o tipo de conversao entre 1-Temperatura, 2-Distancia ou 3-Tempo: \n");
+	scanf("%i",&conversao);
+	printf("Digite um valor: ");
+	scanf("%i",valor);
+	
+
+	switch(conversao){
+	case 1:{
+		printf("Escolha a unidade de conversao entre 1-Celsius, 2-Fahrenheit ou 3-Kelvin: \n");
+		scanf("%i",&a1);
+		;break;}
+	case 2:{
+		printf("Escolha a unidade de conversao entre 1-Metros, 2-Quilometros ou 3-Milhas: \n");
+		scanf("%i",&b1);
+		;break;}
+	case 3:{
+		printf("Escolha a unidade de conversao entre 1-Segundos, 2-Minutos ou 3-Horas: \n");
+		scanf("%i",&c1);
+		;break;}
+	}
+
+
+	switch(conversao){
+	case 1:{
+		printf("Escolha a segunda unidade de conversao entre 1-Celsius, 2-Fahrenheit ou 3-Kelvin: \n");
+		scanf("%i",&a2);
+		;break;}
+	case 2:{
+		printf("Escolha a segunda unidade de conversao entre 1-Metros, 2-Quilometros ou 3-Milhas: \n");
+		scanf("%i",&b2);
+		;break;}
+	case 3:{
+		printf("Escolha a segunda unidade de conversao entre 1-Segundos, 2-Minutos ou 3-Horas: \n");
+		scanf("%i",&c2);
+		;break;}
+	}
+
+
+	
+
+
+
+
+}
+9.
+#include <stdio.h>
+
+int main(){
+
+	int valor;
+	float final;
+	char v1;
+	printf("Escolha uma moeda entre USD-1, EUR-2 e GBP-3: ");
+	scanf("%c",&v1);
+	printf("Digite o valor a ser convertido: ");
+	scanf("%i",&valor);
+
+	switch(v1){
+	case '1':{final = valor/5.20;printf("\n%i Reais equivalem a %.2f Dolares",valor,final);break;}
+	case '2':{final = valor/5.60;printf("\n%i Reais equivalem a %.2f Euros",valor,final);break;}
+	case '3':{final = valor/6.80;printf("\n%i Reais equivalem a %.2f Libras Esterlinas",valor,final);break;}
+	
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+}
+10.
+//questao 10
+
+#include <stdio.h>
+int main()
+{
+    int idioma, brilho, wifi, modo, opcao;
+
+    printf("qual opcao voce deseja escolher (1-idioma, 2-brilho, 3-wifi, 4-modo): ");
+    scanf(" %i", &opcao);
+
+    switch(opcao)
+    {
+    case 1:
+        printf("escolha o idioma (1-ingles, 2-portugues, 3-espanhol): ");
+        scanf(" %i", &idioma);
+        break;
+    case 2:
+        printf("escolha o brilho (1-baixo, 2-medio, 3-alto): ");
+        scanf(" %i", &brilho);
+        break;
+    case 3:
+        printf("escolha se voce deseja ativar ou desativar o wifi (1-ativar, 2-desativar): ");
+        scanf(" %i", &wifi);
+        break;
+    case 4:
+        printf("escolha o modo (1-claro, 2-escuro): ");
+        scanf(" %i", &modo);
+        break;
+        default: printf("opcao invalida"); break;
+
+    }
+
+    switch(idioma)
+    {
+    case 1:
+        printf("A opcao escolhida foi ingles");
+        break;
+    case 2:
+        printf("A opcao escolhida foi portugues");
+        break;
+    case 3:
+        printf("A opcao escolhida foi espanhol");
+        break;
+    }
+    
+    switch(brilho)
+    {
+    case 1:
+        printf("A opcao escolhida foi brilho baixo");
+        break;
+    case 2:
+        printf("A opcao escolhida foi brilho medio");
+        break;
+    case 3:
+        printf("A opcao escolhida foi brilho alto");
+        break;
+    }
+    
+    switch(wifi)
+    {
+    case 1:
+        printf("wifi on");
+        break;
+    case 2:
+        printf("wifi off");
+        break;
+    }
+
+    switch(modo)
+    {
+    case 1:
+        printf("modo claro");
+        break;
+    case 2:
+        printf("modo escuro");
+    }
+
+}

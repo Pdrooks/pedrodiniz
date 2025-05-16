@@ -1,0 +1,411 @@
+1.
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main(){
+
+	
+	int n1,n2,loop;
+	char op;
+
+	while(loop != 2){
+
+	system("cls");
+	
+	printf("Digite o primeiro numero: ");
+	scanf("%i", &n1);
+
+	printf("Digite o segundo numero: ");
+	scanf("%i", &n2);
+	
+	printf("Digite a operacao (+ - * /): ");	
+	fflush(stdin);
+	scanf("%c", &op);
+
+	
+
+	switch(op){
+	case '*': printf("O resultado da multiplicacao de %i e %i e: %i",n1,n2,n1*n2); break;
+
+	case '-': printf("O resultado da subtracao de %i e %i e: %i",n1,n2,n1-n2); break;
+
+	case '/': printf("O resultado da divisao de %i e %i e: %i",n1,n2,n1/n2); break;
+
+	case '+': printf("O resultado da soma de %i e %i e: %i",n1,n2,n1+n2); break;
+
+	default: printf("TENTE NOVAMENTE!");
+	
+	}
+
+	printf("\nQuer continuar? (SIM - 1 / NAO - 2)\n");
+	scanf("%i",&loop);
+
+
+	}
+
+
+	
+
+
+
+
+
+
+
+
+
+
+}
+2.
+#include<stdio.h>
+#include<math.h>
+
+	
+int main(){
+
+	float n=0,soma=0,contador=0,min=INFINITY,max=-INFINITY,contadorpar=0,totalpar=0;
+	
+
+	while(1){
+
+		printf("Digite um numero: ");
+		scanf("%f",&n);
+
+		if(n>=30000){
+		break;}
+		
+
+		contador++;	
+		soma+=n;
+
+		if(n<=min){
+			min = n;
+		}
+		if(n>=min){
+			max = n;
+		}
+
+		if(((int)(n))%2==0)
+		{
+		contadorpar++;
+		totalpar+=n;	
+		}
+
+	}
+	
+	printf("\tESTATISTICAS\n\n");
+	printf("Total dos numeros: %.f\n",soma);
+	printf("Quantidade de numeros: %.f\n",contador-1);
+	printf("Media dos numeros: %.2f\n",soma/contador);
+	printf("Maior numero: %.f\n",max);
+	printf("Menor numero: %.f\n",min);
+	printf("Media de numeros pares: %.f\n",totalpar);
+	printf("Porcentagem de numero impares: %.f\n",(soma-totalpar)/soma*100);
+
+}
+3.
+#include <stdio.h>
+
+int main(){
+
+	int valor=1,troco,cem=0,cinquenta=0,vinte=0,dez=0,cinco=0,um=0,i=0;
+
+	while(valor!=0){
+		printf("Digite um valor para o troco: ");
+		scanf("%i",&valor);
+
+		if(valor/100>=1)
+			cem = valor/100;
+			
+			else cem = 0; 
+
+		if(valor%100/50>=1)
+			cinquenta = valor%100/50;
+			
+			else cinquenta = 0; 
+		
+		if(valor%100%50/20>=1)
+			vinte = valor%100%50/20;
+
+			else vinte = 0;
+
+		if(valor%100%50%20/10>=1)
+			dez = valor%100%50%20/10;
+
+			else dez = 0;
+
+		if(valor%100%50%20%10/5>=1)
+			cinco = valor%100%50%20%10/5;
+
+			else cinco = 0;
+
+		if(valor%100%50%20%10%5>=1)
+			um = valor%100%50%20%10%5;
+
+			else um = 0;
+			
+
+
+		printf("O valor do troco e:\nCem: %i\nCinquenta: %i\nVinte: %i\nDez: %i\nCinco: %i\nUm: %i\n",cem,cinquenta,vinte,dez,cinco,um);
+		printf("\nDigite 0 para sair.\n");
+	}
+
+
+
+
+
+
+
+
+
+
+} 
+5.
+#include<stdio.h>
+
+int main(){
+
+	int n1,i,impar=1,resultado=0;
+
+
+
+	printf("Digite um numero: ");
+	scanf("%i",&n1);
+
+	for(i=1;i<=n1;i++,impar+=2){
+
+	resultado+=impar;
+
+
+	
+
+	}
+	printf("%i\n",resultado);
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+6.
+#include <stdio.h>
+#include <math.h>
+
+
+
+int main(){
+
+
+	int n1,aux,soma,contador,dig,num;
+
+	printf("Digite um numero: ");
+	scanf("%i",&num);
+
+	for(int i = 1; i <=num;i++){
+
+	aux = i;
+	contador=0;
+	soma = 0;
+	
+	while(aux>0){
+	
+	aux/=10;
+	contador++;
+	
+	}
+
+	aux = num;
+
+	while(aux>0){
+	
+	dig%=10;
+	aux/=10;
+	soma += pow(dig,contador);
+		
+	}
+
+	if(num == soma) printf("Numero de armstrong");}
+
+
+
+}
+7.
+#include<stdio.h>
+
+int main(){
+
+	int i=1;
+	
+
+	float sinal=1,den=1,soma=0,pi;
+
+
+	 for(;i<=200000;i++){
+	  soma = soma + sinal * 1/den;
+	  den+=2;
+	  sinal *= -1;
+	  pi = 4 * soma;
+	}
+	 printf("%f\n",pi);
+	 printf("%i",i);
+
+
+	
+		
+	
+
+
+
+
+
+
+
+
+
+}
+11.
+#include<stdio.h>
+
+int main(){
+
+	int n1,i,ant=0,suc=1;
+
+	printf("Digite um numero: ");	
+	scanf("%i",&n1);
+
+	for(i=0;i<=n1-3;i++){
+	
+	suc+=ant;
+	ant+=suc;
+
+	printf("%i\n%i\n",suc,ant);
+	
+
+	}
+	printf("\nA posicao %i equivale ao numero de fibonacci: %i",n1,ant);
+
+
+
+
+
+
+
+
+}
+12.
+#include<stdio.h>
+
+int main(){
+
+	int n1,i,p;
+
+	printf("Digite um numero e verifique se e primo: ");
+	scanf("%i",&n1);
+
+	for(i>1;i<n1;i++){
+	if(n1 % i != 0 ){
+	printf("%i",i);
+	 printf("primo\n");}
+	
+	;}
+	
+	
+
+
+
+
+
+
+
+
+
+
+}
+13.
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main(){
+
+	int entrada,aleatorio,loop;
+
+	while(loop != 0){
+	
+	printf("Adivinhe um numero de 1 a 100: ");
+	scanf("%i",&entrada);
+
+	srand(time(NULL));
+	
+	aleatorio = rand() % 100 + 1;
+
+	if(entrada == aleatorio) printf("Acertou!");
+	else printf("Errou!\nO numero era: %i\n",aleatorio);
+	
+	printf("Digite 1 para continuar ou 0 para encerrar ");
+	scanf("%i",&loop);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+15.
+#include <stdio.h>
+
+int main(){
+
+	
+	
+	int n1,n2,loop=1;
+	
+	while(loop){
+
+	printf("Digite um numero de cinco digitos: ");
+	scanf("%i",&n1);
+
+	n2 = (n1/10000)+(n1%10000/1000*10)+(n1%10000%1000/100*100)+(n1%10000%1000%100/10*1000)+(n1%10000%1000%100%10*10000);
+
+	if(n1 == n2){ printf("o numero %i e um palindromo.",n1); loop = 0;}
+	else {printf("O numero %i nao e um palindromo.\nDigite 1 para continuar e 0 para encerrar: ",n1);
+	     scanf("%i",&loop);}
+
+  	}
+		
+
+
+	
+	
+
+	
+	
+
+	
+	
+	
+
+
+}

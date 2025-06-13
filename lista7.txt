@@ -1,0 +1,184 @@
+1.Explique o significado de cada ocorrência de ∗ no fragmento de código a seguir e indique qual
+a saída exibida na tela.
+int *p, x=5; \\Ponteiro de p;
+*p *= 2**p;  \\Ponteiro de p = ponteiro de p vezes 2 vezes ponteiro de p;
+printf("%d", x); \\ saida "5"
+
+2.
+#include <stdio.h>
+
+int main(){
+
+	char ****p,***q,**r,*s;
+	char t = 'a';
+
+	p = &q;
+	q = &r;
+	r = &s;
+	s = &t;
+	
+	printf("%c\n",t);
+
+	printf("%c\n",*s);
+	
+	printf("%c\n",**r);
+
+	printf("%c\n",***q);
+
+	printf("%c\n",****p);
+
+}
+
+3. Com ponteiros, 1000+1 não é necessariamente 1001! Qual será a saída do código abaixo?
+#include <stdio.h>
+void main(void) {
+char *a = (char *) 0x1000; 
+ int *b = (int *) 0x1000;
+ float *c = (float *) 0x1000;
+ double *d = (double *) 0x1000;
+printf("%p %p %p %p", a+1, b+1, c+1, d+1 );  \\1001 1004 1004 1008
+}
+
+
+4. Operadores de adição e subtração com ponteiros e inteiros. Mostre as saídas do código abaixo:
+#include <stdio.h>
+void main(void) {
+int *p = (int *) 0x1000;
+ p++; printf("%p ", p );  \\1001
+ p-=3; printf("%p ", p ); \\ 998
+ p+=2; printf("%p ", p ); \\ 1000
+ p--; printf("%p ", p ); \\999
+}
+
+5.
+#include <stdio.h>
+
+
+void trocarSiclicamente(int *a,int *b,int *c){
+
+	int aux = *a;
+	*a = *c;
+	*c = *b;
+	*b = aux;
+
+}
+
+int main(){
+
+	int na,nb,nc;
+
+	printf("Digite tres valores: ");
+	scanf("%i %i %i",&na,&nb,&nc);
+
+	trocarSiclicamente(&na,&nb,&nc);
+
+	printf("%i %i %i",na,nb,nc);
+
+}
+
+7.
+#include <stdio.h>
+
+void contarDivisores(int *num,int *totalDivisores){
+
+	int i;
+	*totalDivisores=0;
+	for(i = 1; i <= *num; i++){
+	if(*num % i == 0){
+	(*totalDivisores)++;}
+	
+	}
+
+}
+
+int main(){
+
+	int Divisores,num;
+	printf("Digite um numero e veja quantos divisores possui: ");
+	scanf("%i",&num);
+
+	contarDivisores(&num,&Divisores);
+
+	printf("%i possui %i divisores",num,Divisores);
+}
+
+8.
+#include <stdio.h>
+
+void compararNumeros(int *a,int *b,int *maior,int *menor){
+
+	if(*a>*b){ *maior = *a;
+	*menor = *b;}
+	else {*maior = *b;
+	*menor = *a;}
+	
+
+}
+
+int main(){
+
+	int n1,n2,maiorr,menorr;
+
+	printf("Digite dois numeros: ");
+	scanf("%i %i",&n1,&n2);
+	
+	compararNumeros(&n1,&n2,&maiorr,&menorr);
+
+	printf("%i e maior do que %i",maiorr,menorr);
+
+
+
+
+
+}
+
+9.
+#include <stdio.h>
+
+void calcularDobroMetade(float *num, float *dobro, float *metade){
+
+	*metade = *num / 2;
+	*dobro = *num * 2;
+
+}
+
+int main(){
+
+	float n1,dobro,metade;
+
+	printf("Digite um numero: ");
+	scanf("%f",&n1);
+	
+	calcularDobroMetade(&n1,&dobro,&metade);
+
+	printf("O dobro de %f e %f\nA metade de %f e %f",n1,dobro,n1,metade);
+
+}
+10.
+#include <stdio.h>
+
+void dividir(int *dividendo,int *divisor, int *quociente, int *resto){
+
+	*resto = *divisor % *dividendo;
+	*quociente = *divisor / *dividendo;
+
+}
+
+int main(){
+
+	int n1,n2,quociente,resto;
+
+	printf("Digite dois numeros para divisao: ");
+	scanf("%i %i",&n1,&n2);
+
+	dividir(&n1,&n2,&quociente,&resto);
+
+	printf("O quociente de %i e %i e %i\nO resto de %i e %i e %i",n1,n2,quociente,n1,n2,resto);
+
+
+
+
+}
+
+
+

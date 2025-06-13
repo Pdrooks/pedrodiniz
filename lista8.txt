@@ -1,0 +1,252 @@
+2.
+#include <stdio.h>
+
+int main(){
+
+	int vector[5];
+
+	for(int i = 0; i <= 5;i++){
+		printf("Digite o %i numero: ",i+1);
+		scanf("%i",&vector[i]);
+
+	}
+	for(int i = 5; i >= 0; i--){
+		printf("%i ",vector[i]);
+
+
+	}
+
+
+
+}
+
+3.
+#include <stdio.h>
+
+int main(){
+
+	int vec[10],i=0;
+
+	for(int i = 0; i<10; i++){
+
+		printf("Entre com o valor de %i: ", i);
+		scanf("%i",&vec[i]);
+	
+	
+	}
+	for(int i = 0;i<10;i++){
+		if(vec[i]<0){
+			vec[i] = 0;}
+}
+	for(int i = 0;i<10;i++)
+	printf("\nvec[%i]=%i\n",i,vec[i]);
+
+}
+4.
+#include <stdio.h>
+
+#define MULTIPLO(a,b) (b%a==0) ? 1 : 0
+
+
+int main(){
+	
+	int a,b;
+	
+	printf("Digite dois numeros: ");
+	scanf("%i %i",&a,&b);
+
+	if(MULTIPLO(a,b)) printf("E multiplo");
+	
+	else printf("Nao e multiplo");
+
+
+
+
+
+}
+
+5.
+#include <stdio.h>
+
+int main(){
+
+    int vec[20],vecpar[20],vecimpar[20],ci=0,cp=0;
+
+
+    
+    for(int i = 0; i < 20; i++){
+    printf("Digite o %i numero: ",i+1);
+    scanf("%i",&vec[i]);}
+
+
+    for(int i = 0; i < 20; i++){
+
+        if(vec[i] % 2 == 0){
+        vecpar[cp] = vec[i];
+        cp++;    
+    }
+        if(vec[i] % 2 != 0){
+        vecimpar[ci] = vec[i];
+        ci++;}
+
+    }
+    for(int i = 0; i < 20;i++){
+
+    printf("%i ",vec[i]);
+    printf("\n");}
+    for(int i = 0; i < cp;i++){
+     printf("%i ",vecpar[i]);
+     printf("\n");}
+    for(int i = 0; i < ci;i++){ 
+    printf("%i ",vecimpar[i]);
+    printf("\n");}
+
+
+
+
+
+
+
+
+}
+
+6.
+#include <stdio.h>
+
+int main(){
+
+    int principal[10],listaum[5],listadois[5];
+
+
+for(int i = 0; i < 10; i++){
+
+    printf("\nDigite 10 digitos: ");
+    scanf("%i", &principal[i]);
+    
+    
+    
+}
+
+for(int i = 5; i < 10; i++){
+    listadois[i] = principal[i];
+    printf("%i ",listadois[i]);}
+
+for(int i = 0; i < 5; i++){
+    listaum[i] = principal[i];
+    printf("%i ",listaum[i]);}
+
+
+}
+
+int main(){
+
+    int vecA[5],vecB[5],vecEscalar[10],Soma=0;
+
+    for(int i = 0; i<5;i++){
+        printf("Digite o valor do primeiro vetor: ");
+        scanf("%i",&vecA[i]);
+    }
+    for(int i = 0; i<5;i++){
+        printf("Digite o valor do segundo vetor: ");
+        scanf("%i",&vecB[i]);
+    }
+
+    for(int i = 0; i<5;i++){
+        vecEscalar[i] = vecA[i] * vecB[i];
+        printf("%i ",vecEscalar[i]);
+        Soma +=vecEscalar[i];
+
+        
+    }
+    printf("\n%i",Soma);
+
+
+
+
+
+
+
+
+
+
+}
+
+
+7.
+#include <stdio.h>
+
+int main(){
+
+	int valor,cedulas[]={0,0,0,0,0};//cedula[0] -> 1 real [1] -> 5 reais;
+
+	printf("Entre com o valor em reais: ");
+	scanf("%i",&valor);
+
+	if(valor/100!=0){
+
+		cedulas[4] = valor/100;
+		valor -= cedulas[4]*100;
+
+	}
+	else if(valor/50!=0){
+		
+		cedulas[3] = valor/50;
+		valor -= cedulas[3]*50;
+	}
+	else if(valor/10!=0){
+		
+		cedulas[2] = valor/10;
+		valor -= cedulas[2]*10;
+	}
+	else if(valor/5!=0){
+		
+		cedulas[1] = valor/5;
+		valor -= cedulas[1]*5;
+	}
+	else if(valor/1!=0){
+		
+		cedulas[0] = valor/1;
+		valor -= cedulas[0]*1;
+	}
+
+	for(int i = 4; i>=0;i--){
+
+	printf("%i cedulas de R$%i\n",cedulas[i],(i+1)*20);
+	}
+
+
+8.
+
+
+	
+
+}
+11.
+#include <stdio.h>
+
+int main(){
+
+    float vec[10],faturar;
+
+
+    for(int i = 0; i < 10; i++){
+
+        printf("Digite quanto a %i conta vendeu: ",i+1);
+        scanf("%f",&faturar);
+        vec[i] = 200 + (faturar * 0.09); 
+       
+
+
+    }
+    for(int i = 0; i < 10;i++){
+        printf("a conta %i recebeu R$%.2f\n",i+1,vec[i]);
+
+
+
+
+    }
+
+
+
+
+}

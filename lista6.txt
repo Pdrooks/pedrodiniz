@@ -1,0 +1,416 @@
+1.
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14
+
+int main(){
+
+	
+
+	float raio,area;
+
+	printf("Digite o raio do circulo: ");
+	scanf("%f",&raio);
+
+	area = (PI * pow(raio,2));
+
+	printf("%f",area);
+
+
+
+
+}
+2.
+#include <stdio.h>
+#include <math.h>
+
+
+#define QUAD(n) pow(n,2)
+
+
+int main(){
+
+	int n;
+
+	printf("Digite um numero: ");
+	scanf("%i", &n);
+
+	printf("%i ao quadrado e %f",n,QUAD(n));
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+3.
+#include <stdio.h>
+
+#define par(n) (n%4==0) ? 1 : 0
+
+int main(){
+
+	int n;
+
+	printf("Digite um ano: ");
+	scanf("%i",&n);
+	
+	if (par(n)) printf("Bissexto");
+	else printf("ano normal");
+
+
+
+
+}
+4.
+#include <stdio.h>
+
+#define MULTIPLO(a,b) (b%a==0) ? 1 : 0
+
+
+int main(){
+	
+	int a,b;
+	
+	printf("Digite dois numeros: ");
+	scanf("%i %i",&a,&b);
+
+	if(MULTIPLO(a,b)) printf("E multiplo");
+	
+	else printf("Nao e multiplo");
+
+
+
+
+
+}
+5.
+#include<stdio.h>
+#include<ctype.h>
+
+#define IS_VOGAL(c) ((c == 'A') || (c == 'E') || (c == 'I') || (c == 'O') || (c == 'U')) ? 1 : 0
+
+int main(){
+
+	char vogal;
+	
+	printf("Digite uma letra: ");
+	scanf("%c",&vogal);
+
+	vogal = toupper(vogal);
+
+	if(IS_VOGAL(vogal)) printf("Vogal");
+	else printf("Consoante");
+
+
+
+
+
+
+
+}
+6.
+#include<stdio.h>
+#define ABS(n) (n > 0) ? n : (n*(-1))
+int main(){
+
+	int num;
+
+	printf("Digite um numero: ");
+	scanf("%i",&num);
+
+	printf("%i",ABS(num));
+
+
+
+
+
+
+
+}
+
+7.
+#include<stdio.h>
+
+#define TROCAR(a,b) (a!=b) ? ((a==aux) && (a==b) && (b==aux)) 
+
+int main(){
+
+	int a,b,aux;
+
+	printf("Digite dois valores: ");
+	scanf("%i %i",&a,&b);
+
+	printf("%i %i",TROCAR(b),TROCAR(b));
+
+
+
+
+}
+8.
+#include <stdio.h>
+
+#define minimo(a,b,c) ((a) < (b) ? ((a) < (c) ? (a) : (c)) : ((b) < (c) ? (b) : (c)))
+
+int main(){
+
+    int n1,n2,n3;
+
+    printf("Digite tres numeros: ");
+    scanf("%i %i %i",&n1,&n2,&n3);
+
+    int menor = minimo(n1,n2,n3);
+
+    printf("o menor numero e %i",menor);
+
+
+
+}
+
+9.
+#include <stdio.h>
+
+int fatorial(int n) {
+    
+    int resultado = 1;
+    for (int i = 1; i <= n; i++) {
+      resultado *= i;
+    }
+    return resultado;
+  
+}
+
+int main() {
+  int num;
+  int resultado_fatorial;
+
+  printf("Digite um numero inteiro nao negativo para calcular o fatorial: ");
+  scanf("%d", &num);
+
+  resultado_fatorial = fatorial(num);
+
+  if (resultado_fatorial != -1) {
+    printf("O fatorial de %d e: %d\n", num, resultado_fatorial);
+  }
+
+  return 0;
+}
+
+10.
+#include <stdio.h>
+
+int eprimo(int n) {
+  if (n <= 1) return 0;
+  for (int i = 2; i * i <= n; i++)
+    if (n % i == 0) return 0;
+  return 1;
+}
+
+int main() {
+  int num;
+  printf("Digite um numero: ");
+  scanf("%i", &num);
+  if (eprimo(num))
+    printf("%i e primo.\n", num);
+  else
+    printf("%i nao e primo.\n", num);
+  return 0;
+}
+
+11.
+#include <stdio.h>
+
+#define eh_palindromo(n) ((n1/10000 == n1%10) && (n1%10000/1000 == (n1%100/10))) ? 1 : 0
+
+int main(){
+
+	int n1;
+
+	printf("Digite um numero e valide se eh um palindromo: ");
+	scanf("%i",&n1);
+
+	if(eh_palindromo(n)) printf("Palindromo");
+	else printf("nao e palindromo");
+
+
+
+
+
+
+
+
+}
+12.
+#include <stdio.h>
+
+int mdc(int a, int b) {
+
+  if (b == 0) {
+    return a;
+  }
+
+  return mdc(b, a % b);
+}
+
+int main() {
+  int num1, num2;
+
+  printf("Digite o primeiro numero inteiro: ");
+  scanf("%d", &num1);
+
+  printf("Digite o segundo numero inteiro: ");
+  scanf("%d", &num2);
+
+  int resultado_mdc = mdc(num1, num2);
+
+  printf("O MDC de %d e %d eh: %d\n", num1, num2, resultado_mdc);
+
+  return 0;
+}
+13.
+#include <stdio.h>
+
+#define SOMA_PA(n,a1,r) (((a1 + n)*r)/2)
+
+int main(){
+
+    int n,a1,r,resultado;
+
+    printf("Digite o numero de termos: ");
+    scanf("%i",&n);
+    
+    printf("\nDigite o primeiro termo: ");
+    scanf("%i",&a1);
+    
+    printf("\nDigite a posicao do termo: ");
+    scanf("%i",&r);
+
+    resultado = SOMA_PA(n,a1,r);
+
+    printf("o resultado e %i",resultado);
+
+
+
+
+
+
+
+}
+14.
+#include <stdio.h>
+
+int calcular_idade(int dia,int mes,int ano){
+	
+	int dia_atual=22,mes_atual=5,ano_atual=2025,diaa,mesa,total;
+
+	
+
+	if(dia_atual > dia) dia_atual -= dia;
+	else diaa = dia+30 - dia_atual ;
+
+	if(mes_atual > mes) mes_atual -= mes;
+	else mesa = mes + 12 - mes_atual;
+
+	ano_atual -= ano;
+
+	return printf("%i %i %i",dia,mes,ano);
+
+
+
+
+
+
+
+}
+
+
+
+int main(){
+
+	int dia,mes,ano,novodia,novomes,novoano;
+
+	printf("Digite sua data de nascimento: ");
+	scanf("%i/%i/%i",&dia,&mes,&ano);
+
+	int calcular_idade(int dia,int mes,int ano);
+	
+
+
+
+
+
+
+
+}
+15.
+16.
+#include <stdio.h>
+
+int somadiv(int a, int b, int c) {
+  if (a <= 1) {
+    printf("Erro: 'a' deve ser maior que 1.\n");
+    return 0;
+  }
+
+  int soma = 0;
+  for (int i = b; i <= c; i++) {
+    if (i % a == 0) {
+      soma += i;
+    }
+  }
+  return soma;
+}
+
+int main() {
+  int num_a, num_b, num_c;
+
+  printf("Digite o valor de a maior que 1: ");
+  scanf("%d", &num_a);
+
+  printf("Digite o valor de b: ");
+  scanf("%d", &num_b);
+
+  printf("Digite o valor de c: ");
+  scanf("%d", &num_c);
+
+  int resultado = somadiv(num_a, num_b, num_c);
+
+  printf("A soma dos inteiros entre %d e %d divisiveis por %d e: %d\n", num_b, num_c, num_a, resultado);
+
+  return 0;
+}
+17.
+#include <stdio.h>
+
+void csegundos(int totalsegundos) {
+  int horas, minutos, segundos;
+
+
+  horas = totalSegundos / 3600;
+  minutos = (totalsegundos % 3600) / 60;   
+  segundos = totalsegundos % 60;          
+
+  printf("%d segundos equivalem a: %d horas, %d minutos e %d segundos.\n",
+         totalsegundos, horas, minutos, segundos);
+}
+
+int main() {
+  int segundos;
+
+  printf("Digite o numero de segundos: ");
+  scanf("%d", &segundos);
+
+  convertersegundos(segundos);
+
+  return 0;
+}
+18.
+
